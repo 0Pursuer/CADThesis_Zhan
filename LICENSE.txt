@@ -1,0 +1,19 @@
+The template-derived file hhuthesis-cad.cls is based on hhuthesis v2.0.0.
+Original copyright (C) 2020-2021 Wenhan Cao, Hohai University.
+Original project: https://github.com/caowenhan/hhuthesis
+Original source snapshot: 7251ec6b0b35c2281e4f832bcf3e588cc76fa2f4
+
+This is an explicitly renamed, modified, independently compilable adaptation,
+not the unmodified upstream distribution. The changes and source availability
+are documented in TEMPLATE_CHANGES.md. The original maintainer is not responsible
+for this adaptation. No current maintainer is appointed for this draft adaptation.
+
+The template-derived material may be distributed and/or modified under the
+conditions of the LaTeX Project Public License, version 1.3c or any later version.
+The complete LPPL 1.3c license is included verbatim as LPPL-1.3c.tex, copied from
+the installed LaTeX distribution. The authoritative license is also available at:
+https://www.latex-project.org/lppl.txt
+
+The thesis-specific abstract, outline, configuration, and writing guidance were
+prepared for this user's thesis drafting task. The upstream author's name must
+not be used to imply endorsement of that content or university approval.

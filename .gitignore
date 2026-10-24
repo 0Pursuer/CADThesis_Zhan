@@ -1,0 +1,55 @@
+# ============================================
+# 论文 LaTeX 工程 .gitignore
+# 原则：只跟踪“人写的源文件”，编译产物一概不入库
+# ============================================
+
+# ----- LaTeX 编译中间产物（每次编译都会重新生成）-----
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.xdv
+*.thm
+*.nav
+*.snm
+*.vrb
+*.idx
+*.ind
+*.ilg
+*.glo
+*.gls
+*.acn
+*.acr
+*.alg
+*.loa
+
+# ----- 编译输出 -----
+# 想连 main.pdf 一起存进历史，删掉下面这行即可
+main.pdf
+out/
+
+# ----- 临时 / 备份文件 -----
+*.bak
+*.tmp
+*~
+*.swp
+
+# ----- 编辑器与系统垃圾 -----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ----- 本地工具状态（不属于论文内容）-----
+.workbuddy/

@@ -1,0 +1,31 @@
+% ===== 写作阶段开关 =====
+\newif\ifoutlineguidance
+\outlineguidancetrue  % 改为 \outlineguidancefalse 可隐藏“写作提示”。
+\newif\ifdraftlayout
+\draftlayouttrue      % 写作预览不插空白页；定稿前改为 false 并核对学院要求。
+\newif\iffullfrontmatter
+\fullfrontmatterfalse % 当前仅摘要/大纲，默认不输出正式授权声明和全套封面。
+
+% 三级目录：章 -> 节 -> 小节，例如 4 / 4.3 / 4.3.2。
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\titlecontents{subsection}[2\ccwd]{\songti\zihao{-4}}
+  {\thecontentslabel\hspace{0.5\ccwd}}{}
+  {\hspace{.5em}\titlerule*{.}\contentspage}
+\hypersetup{hidelinks,pdfdisplaydoctitle=true,
+ pdftitle={异构CAD形变特征转换技术研究与模型转换实现：摘要与三级目录初稿},
+ pdfauthor={作者待填写},pdfsubject={硕士论文写作框架}}
+\emergencystretch=2em
+\raggedbottom
+% 非正式预览采用连续起章，保留模板的其余页边距、字体级别及页眉页脚。
+\ifdraftlayout
+ \makeatletter\@openrightfalse\makeatother
+ \let\cleardoublepage\clearpage
+ % 仅提纲预览压缩标题留白；关闭 draftlayout 后恢复原模板间距。
+ \ctexset{section={beforeskip=10pt,afterskip=8pt},subsection={beforeskip=8pt,afterskip=6pt}}
+\fi
+% 这些提示是提纲说明，不是最终论文正文。
+\newcommand{\chapterguide}[1]{%
+ \ifoutlineguidance\par\noindent{\small\color{black!70}\textbf{本章写作重点：}#1}\par\medskip\fi}
+\newcommand{\outlinehint}[1]{%
+ \ifoutlineguidance\par\noindent{\small\color{black!70}\textbf{写作提示：}#1}\par\fi}

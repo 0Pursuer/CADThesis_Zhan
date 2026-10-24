@@ -1,0 +1,274 @@
+%% hhuthesis-cad.cls -- thesis-outline adaptation of hhuthesis v2.0.0
+%% Original: Copyright (C) 2020-2021 Wenhan Cao, Hohai University.
+%% Original project: https://github.com/caowenhan/hhuthesis
+%% Source snapshot: 7251ec6b0b35c2281e4f832bcf3e588cc76fa2f4
+%% Derived file, prepared 2026-10-24. NOT an official university template.
+%% Distributed under LPPL 1.3c or later. See LICENSE.txt and TEMPLATE_CHANGES.md.
+%% Retains original page layout, heading styles, front matter and cover commands.
+%% The renamed class removes unused demonstration/theorem/listing environments;
+%% font fallback and draft options are isolated in config/*.tex.
+\NeedsTeXFormat{LaTeX2e}[2008/05/04]
+\ProvidesClass{hhuthesis-cad}[2026/10/24 hhuthesis v2.0.0 CAD outline adaptation]
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
+\newif\ifhhut@bachelor\hhut@bachelorfalse
+\newif\ifhhut@academicmaster\hhut@academicmasterfalse
+\newif\ifhhut@professionalmaster\hhut@professionalmasterfalse
+\newif\ifhhut@nonfulltimemaster\hhut@nonfulltimemasterfalse
+\newif\ifhhut@doctor\hhut@doctorfalse
+\DeclareOption{bachelor}{\hhut@bachelortrue}
+\DeclareOption{academicmaster}{\hhut@academicmastertrue}
+\DeclareOption{professionalmaster}{\hhut@professionalmastertrue}
+\DeclareOption{nonfulltimemaster}{\hhut@nonfulltimemastertrue}
+\DeclareOption{doctor}{\hhut@doctortrue}
+\ProcessOptions\relax
+\LoadClass[zihao=-4,a4paper,twoside,openright,UTF8,space=auto]{ctexbook}
+\renewcommand{\contentsname}{目录}
+\renewcommand{\listfigurename}{插图清单}
+\renewcommand{\listtablename}{附表清单}
+\def\hhut@label@preface{前言}
+\def\hhut@label@abstract{摘要}
+\def\hhut@label@keywords{关键词：~}
+\def\hhut@label@enabstract{ABSTRACT}
+\def\hhut@label@enkeywords{Keywords:~}
+\def\hhut@label@acknowledgement{致谢}
+\def\hhut@label@resume{附录}
+\def\hhut@value@templateversion{v2.0.0}
+\newcommand{\version}{\hhut@value@templateversion}
+\def\hhut@label@nlc{国家图书馆封面}
+\def\hhut@label@studentnumber{学号：}
+\def\hhut@label@classification{分类号：}
+\def\hhut@label@securitylevel{密级：}
+\def\hhut@label@udc{U~D~C：}
+\def\hhut@label@thesistitle@doctor{博士学位论文}
+\def\hhut@label@thesistitle@academic{硕士学位论文}
+\def\hhut@label@thesistitle@professional{全日制工程硕士专业学位论文}
+\def\hhut@label@thesistitle@nonfulltime{非全日制工程硕士专业学位论文}
+\def\hhut@label@thesistitle@bachelor{学士学位论文}
+\def\hhut@label@tutor{指导教师姓名：}
+\def\hhut@label@professional@tutora{学校指导教师：}
+\def\hhut@label@professional@tutorb{基地指导教师：}
+\def\hhut@label@degree{申请学位级别：}
+\def\hhut@label@major{专业名称：}
+\def\hhut@label@submitdate{论文提交日期：}
+\def\hhut@label@defenddate{论文答辩日期：}
+\def\hhut@label@awarded{学位授予单位和日期：}
+\def\hhut@label@chairman{答辩委员会主席：}
+\def\hhut@label@reviewer{答辩委员会成员：}
+\def\hhut@label@comma{、}
+\def\hhut@label@spine{中缝（书脊）}
+\def\hhut@label@cover{中文信息封面}
+\def\hhut@label@cover@classification{分类号(中图法)}
+\def\hhut@label@cover@udc{UDC(DDC)}
+\def\hhut@label@cover@securitylevel{密级}
+\def\hhut@label@cover@author{论文作者姓名}
+\def\hhut@label@cover@studentnumber{学号}
+\def\hhut@label@cover@institute{单位}
+\def\hhut@label@cover@zhtitle{论文中文题名}
+\def\hhut@label@cover@zhsubtitle{论文中文副题名}
+\def\hhut@label@cover@entitle{论文英文题名}
+\def\hhut@label@cover@ensubtitle{论文英文副题名}
+\def\hhut@label@cover@thesislang{论文语种}
+\def\hhut@label@cover@abstractlang{论文摘要语种}
+\def\hhut@label@cover@thesispages{论文页数}
+\def\hhut@label@cover@numofwords{论文字数}
+\def\hhut@label@cover@unitofwords{(万)}
+\def\hhut@label@cover@thesiskeywords{论文关键词}
+\def\hhut@label@cover@degree{申请学位级别}
+\def\hhut@label@cover@major{专业名称}
+\def\hhut@label@cover@researchfield{研究方向}
+\def\hhut@label@cover@tutor{指导教师姓名}
+\def\hhut@label@cover@professional@tutora{学校指导教师}
+\def\hhut@label@cover@professional@tutorb{基地指导教师}
+\def\hhut@label@cover@tutorinstitute{导师单位}
+\def\hhut@label@cover@professional@tutorinstitute{单位}
+\def\hhut@label@cover@defenddate{论文答辩日期}
+\def\hhut@label@encover{英文信息封面}
+\def\hhut@label@enstatement{Dissertation Submitted to\\
+ {\rmfamily\zihao{4}\textbf{\hhut@value@eninstitute}}\\
+ In Fulfillment of the Requirement\\For the Degree of\\
+ {\rmfamily\zihao{4}\textbf{\hhut@value@englishdegree}}\\}
+\def\hhut@label@enby{By}
+\def\hhut@label@entutor{Dissertation Supervisor:~}
+\def\hhut@label@declareoriginal{原创性声明}
+\def\hhut@label@original{学位论文独创性声明：}
+\def\hhut@label@originalcontent{本人所呈交的学位论文是我个人在导师指导下进行的研究工作及取得的研究成果。尽我所知，除了文中特别加以标注和致谢的地方外，论文中不包含其他人已经发表或撰写过的研究成果。与我一同工作的同事对本研究所做的任何贡献均已在论文中作了明确的说明并表示了谢意。如不实，本人负全部责任。}
+\def\hhut@label@authorsign{论文作者(签名)：}
+\def\hhut@label@originaldate{年\hspace{3em}月\hspace{3em}日}
+\def\hhut@label@authorization{学位论文使用授权说明：}
+\def\hhut@label@authorizationcontent{河海大学、中国科学技术信息研究所、国家图书馆、中国学术期刊(光盘版)电子杂志社有权保留本人所送交学位论文的复印件或电子文档，可以采用影印、缩印或其他复制手段保存论文。本人电子文档的内容和纸质论文的内容相一致。除在保密期内的保密论文外，允许论文被查阅和借阅。论文全部或部分内容的公布(包括刊登)授权河海大学研究生院办理。}
+\RequirePackage{amsmath,amsthm,amsfonts,amssymb,bm,mathrsfs}
+\RequirePackage{upgreek,xltxtra,hologo,etoolbox,xparse,notoccite,ifthen,ifpdf}
+\RequirePackage{fancyhdr,ulem,indentfirst}
+\RequirePackage[paper=a4paper,top=2.5cm,bottom=2.5cm,left=2.7cm,right=2.7cm,headheight=0.5cm,footskip=0.7cm]{geometry}
+\RequirePackage{setspace,titletoc,graphicx}
+\RequirePackage[labelformat=simple]{subcaption}
+\RequirePackage{wrapfig,caption,bicaption,float,threeparttable,longtable,dcolumn,array,multirow,multicol,makecell,diagbox,booktabs}
+\RequirePackage[numbers,square,comma,super,sort&compress]{natbib}
+\RequirePackage{xcolor,hyperref,enumitem,wasysym,pifont,hypernat,tabularx}
+\newcommand{\me}{\mathrm{e}}
+\newcommand{\mi}{\mathrm{i}}
+\newcommand{\mj}{\mathrm{j}}
+\newcommand{\dif}{\,\mathrm{d}}
+%% Original font families, with portable fallback (no fonts are redistributed).
+\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\IfFontExistsTF{Tinos}{\setmainfont{Tinos}}{\setmainfont{Latin Modern Roman}}}
+\IfFontExistsTF{Arial}{\setsansfont{Arial}}{\IfFontExistsTF{Arimo}{\setsansfont{Arimo}}{\setsansfont{Latin Modern Sans}}}
+\IfFontExistsTF{Courier New}{\setmonofont{Courier New}}{\IfFontExistsTF{Cousine}{\setmonofont{Cousine}}{\setmonofont{Latin Modern Mono}}}
+\def\cleardoublepage{\clearpage\if@twoside\ifodd\c@page\else\thispagestyle{empty}\hbox{}\newpage\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\setstretch{1.38}
+\setlength{\parskip}{0pt}
+\setcounter{secnumdepth}{4}
+\ctexset{chapter={name={第,章},number={\chinese{chapter}},format={\centering\rmfamily\heiti\zihao{-2}},pagestyle={hhut@headings},aftername={\enspace},beforeskip={16pt},afterskip={16pt},fixskip=true},section={format={\raggedright\rmfamily\heiti\zihao{3}},aftername={\enspace},beforeskip={16pt},afterskip={16pt},fixskip=true},subsection={format={\raggedright\rmfamily\heiti\zihao{-3}},aftername={\enspace},beforeskip={16pt},afterskip={12pt},fixskip=true},subsubsection={format={\raggedright\rmfamily\fangsong\zihao{4}},aftername={\enspace},beforeskip={12pt},afterskip={12pt},fixskip=true}}
+\setcounter{tocdepth}{1}
+\addtocontents{toc}{\protect\hypersetup{hidelinks}}
+\addtocontents{lot}{\protect\hypersetup{hidelinks}}
+\addtocontents{lof}{\protect\hypersetup{hidelinks}}
+\titlecontents{chapter}[0pt]{\heiti\zihao{-4}}{\thecontentslabel\hspace{0.5\ccwd}}{}{\hspace{.5em}\titlerule*{.}\contentspage}
+\titlecontents{section}[\ccwd]{\songti\zihao{-4}}{\thecontentslabel\hspace{0.5\ccwd}}{}{\hspace{.5em}\titlerule*{.}\contentspage}
+\titlecontents{figure}[0pt]{\songti\zihao{-4}}{\figurename~\thecontentslabel\quad}{\hspace*{-1.5cm}}{\hspace{.5em}\titlerule*{.}\contentspage}
+\titlecontents{table}[0pt]{\songti\zihao{-4}}{\tablename~\thecontentslabel\quad}{\hspace*{-1.5cm}}{\hspace{.5em}\titlerule*{.}\contentspage}
+\fancypagestyle{hhut@empty}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0pt}}
+\fancypagestyle{hhut@headings}{\fancyhf{}\fancyfoot[C]{\songti\zihao{-5}\thepage}\fancyhead[CO]{\ifhhut@doctor\zihao{-5}{\songti 河海大学博士学位论文}\else\ifhhut@bachelor\zihao{-5}{\songti 河海大学学士学位论文}\else\zihao{-5}{\songti 河海大学硕士学位论文}\fi\fi}\fancyhead[CE]{\songti\zihao{-5}\leftmark}}
+\let\hhut@cleardoublepage\cleardoublepage
+\newcommand{\hhut@clearemptydoublepage}{\clearpage{\pagestyle{hhut@empty}\hhut@cleardoublepage}}
+\let\cleardoublepage\hhut@clearemptydoublepage
+\renewcommand{\frontmatter}{\if@openright\cleardoublepage\else\clearpage\fi\@mainmatterfalse\pagenumbering{Roman}\pagestyle{hhut@headings}}
+\renewcommand{\mainmatter}{\if@openright\cleardoublepage\else\clearpage\fi\@mainmattertrue\pagenumbering{arabic}\pagestyle{hhut@headings}}
+\setlength{\floatsep}{6pt}\setlength{\textfloatsep}{6pt}\setlength{\intextsep}{6pt}
+\setlength{\@fptop}{0bp\@plus1.0fil}\setlength{\@fpsep}{12bp\@plus2.0fil}\setlength{\@fpbot}{0bp\@plus1.0fil}
+\renewcommand{\textfraction}{0.15}\renewcommand{\topfraction}{0.85}\renewcommand{\bottomfraction}{0.65}\renewcommand{\floatpagefraction}{0.60}
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\DeclareCaptionLabelSeparator{zhspace}{\hspace{1\ccwd}}
+\DeclareCaptionFont{fontsize}{\zihao{5}}
+\captionsetup{font={fontsize},labelsep=zhspace}
+\captionsetup[table][bi-second]{name=Table}\captionsetup[figure][bi-second]{name=Fig.}
+\captionsetup[table]{labelfont=bf,textfont=bf,position=top,aboveskip={6bp},belowskip={6bp}}
+\numberwithin{table}{section}
+\captionsetup[figure]{labelfont=bf,textfont=bf,position=bottom,aboveskip={6bp},belowskip={6bp}}
+\DeclareGraphicsExtensions{.pdf,.eps,.jpg,.png,.jpeg,.bmp}
+\graphicspath{{figures/}}
+\renewcommand\theequation{\arabic{chapter}.\arabic{section}.\arabic{equation}}
+\renewcommand\thefigure{\arabic{chapter}.\arabic{section}.\arabic{figure}}
+\renewcommand\thetable{\arabic{chapter}.\arabic{section}.\arabic{table}}
+\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}
+\hypersetup{bookmarksnumbered,linktoc=all,colorlinks=true,citecolor=black,filecolor=black,linkcolor=black,linkbordercolor=black,urlcolor=black,plainpages=false,pdfstartview=FitH}
+\setenumerate{fullwidth,topsep=0pt,itemindent=\parindent,listparindent=\parindent,itemsep=0ex,partopsep=0pt,parsep=0ex}
+%% Corrected undefined bullet commands from upstream; not used in this outline.
+\setlist[itemize,1]{label=\textbullet}
+\setlist[itemize,2]{label=$\blacksquare$}
+\setlist[itemize,3]{label=$\blacklozenge$}
+\def\hhut@underline[#1]#2{\underline{\hbox to #1{\hfill#2\hfill}}}
+\def\hhutunderline{\@ifnextchar[\hhut@underline\underline}
+\newcommand\studentnumber[1]{\def\hhut@value@studentnumber{#1}}
+\newcommand\classification[1]{\def\hhut@value@classification{#1}}
+\newcommand\securitylevel[1]{\def\hhut@value@securitylevel{#1}}
+\newcommand\udc[1]{\def\hhut@value@udc{#1}}
+\renewcommand\title[2][\hhut@value@title]{\def\hhut@value@title{#2}\def\hhut@value@titlemark{\MakeUppercase{#1}}}
+\renewcommand\author[1]{\def\hhut@value@author{#1}}
+\newcommand\tutorinfoa[1]{\def\hhut@value@tutorinfoa{#1}}
+\newcommand\tutorinfob[1]{\def\hhut@value@tutorinfob{#1}}
+\newcommand\degree[1]{\def\hhut@value@degree{#1}}
+\newcommand\major[1]{\def\hhut@value@major{#1}}
+\newcommand\submitdate[1]{\def\hhut@value@submitdate{#1}}
+\newcommand\defenddate[1]{\def\hhut@value@defenddate{#1}}
+\newcommand\awarded[1]{\def\hhut@value@awarded{#1}}
+\newcommand\chairman[1]{\def\hhut@value@chairman{#1}}
+\newcommand\reviewera[1]{\def\hhut@value@reviewera{#1}}
+\newcommand\reviewerb[1]{\def\hhut@value@reviewerb{#1}}
+\newcommand\reviewerc[1]{\def\hhut@value@reviewerc{#1}}
+\newcommand\reviewerd[1]{\def\hhut@value@reviewerd{#1}}
+\newcommand\reviewere[1]{\def\hhut@value@reviewere{#1}}
+\newcommand\reviewerf[1]{\def\hhut@value@reviewerf{#1}}
+\newcommand\reviewerg[1]{\def\hhut@value@reviewerg{#1}}
+\newcommand\nlcdate[1]{\def\hhut@value@nlcdate{#1}}
+\newcommand\nlclocate[1]{\def\hhut@value@nlclocate{#1}}
+\newcommand\vtitle[1]{\def\hhut@value@vtitle{#1}}
+\newcommand\institute[1]{\def\hhut@value@institute{#1}}
+\newcommand\zhtitle[1]{\def\hhut@value@zhtitle{#1}}
+\newcommand\zhsubtitle[1]{\def\hhut@value@zhsubtitle{#1}}
+\newcommand\entitle[1]{\def\hhut@value@entitle{#1}}
+\newcommand\ensubtitle[1]{\def\hhut@value@ensubtitle{#1}}
+\newcommand\thesislang[1]{\def\hhut@value@thesislang{#1}}
+\newcommand\abstractlang[1]{\def\hhut@value@abstractlang{#1}}
+\newcommand\thesispages[1]{\def\hhut@value@thesispages{#1}}
+\newcommand\numofwords[1]{\def\hhut@value@numofwords{#1}}
+\newcommand\thesiskeywords[1]{\def\hhut@value@thesiskeywords{#1}}
+\newcommand\researchfield[1]{\def\hhut@value@researchfield{#1}}
+\newcommand\tutor[1]{\def\hhut@value@tutor{#1}}
+\newcommand\tutorinstitute[1]{\def\hhut@value@tutorinstitute{#1}}
+\newcommand\tutora[1]{\def\hhut@value@tutora{#1}}
+\newcommand\tutorainstitute[1]{\def\hhut@value@tutorainstitute{#1}}
+\newcommand\tutorb[1]{\def\hhut@value@tutorb{#1}}
+\newcommand\tutorbinstitute[1]{\def\hhut@value@tutorbinstitute{#1}}
+%% Optional original-style library cover. Name image is optional in this draft.
+\newcommand\makenlctitle[1]{%
+ \cleardoublepage\thispagestyle{empty}\pdfbookmark[0]{\hhut@label@nlc}{nlc}
+ {\songti\zihao{4}\vskip10pt
+ \makebox[40pt][r]{\hhut@label@classification}\hhutunderline[150pt]{\hhut@value@classification}\hfill
+ \makebox[40pt][r]{\hhut@label@studentnumber}\hhutunderline[90pt]{\hhut@value@studentnumber}\vskip10pt
+ \makebox[40pt][r]{\hhut@label@udc}\hhutunderline[150pt]{\hhut@value@udc}\hfill
+ \makebox[40pt][r]{\hhut@label@securitylevel}\hhutunderline[90pt]{\hhut@value@securitylevel}}
+ \vskip40pt\begin{center}
+ \IfFileExists{hhuname.png}{\includegraphics[height=25mm]{hhuname.png}\\}{\vspace*{5mm}{\heiti\zihao{0}河海大学}\par\vspace*{5mm}}
+ \vskip10pt\def\ULthickness{2pt}
+ {\ifhhut@doctor\songti\zihao{2}\hhut@label@thesistitle@doctor\else
+ \ifhhut@academicmaster\songti\zihao{2}\hhut@label@thesistitle@academic\else
+ \ifhhut@professionalmaster\songti\zihao{2}\hhut@label@thesistitle@professional\else
+ \ifhhut@nonfulltimemaster\songti\zihao{2}\hhut@label@thesistitle@nonfulltime\else
+ \songti\zihao{2}\hhut@label@thesistitle@bachelor\fi\fi\fi\fi}
+ \begin{spacing}{2.5}{\heiti\zihao{1}\hhut@value@title}\end{spacing}
+ \vskip30pt{\songti\zihao{4}\hhut@value@author}\vskip30pt\end{center}
+ \begin{spacing}{2.0}{\songti\zihao{4}\noindent
+ {\ifhhut@professionalmaster\hhut@label@professional@tutora\else\ifhhut@nonfulltimemaster\hhut@label@professional@tutora\else\hhut@label@tutor\fi\fi}
+ \hhutunderline[355pt]{\hhut@value@tutorinfoa}\\
+ {\ifhhut@professionalmaster\hhut@label@professional@tutorb\hhutunderline[355pt]{\hhut@value@tutorinfob}\else\ifhhut@nonfulltimemaster\hhut@label@professional@tutorb\hhutunderline[355pt]{\hhut@value@tutorinfob}\else\rightline{\hhutunderline[355pt]{\hhut@value@tutorinfob}}\fi\fi}\\
+ \noindent\hhut@label@degree\hhutunderline[120pt]{\hhut@value@degree}\hfill\hhut@label@major\hhutunderline[150pt]{\hhut@value@major}\\
+ \noindent\hhut@label@submitdate\hhutunderline[120pt]{\hhut@value@submitdate}\hfill\hhut@label@defenddate\hhutunderline[120pt]{\hhut@value@defenddate}\\
+ \noindent\hhut@label@awarded\hhutunderline[313pt]{\hhut@value@awarded}\\
+ \noindent\hhut@label@chairman\hhutunderline[54pt]{\hhut@value@chairman}\hhut@label@reviewer
+ \hhutunderline[54pt]{\hhut@value@reviewera}\hhut@label@comma\hhutunderline[54pt]{\hhut@value@reviewerb}\hhut@label@comma\hhutunderline[54pt]{\hhut@value@reviewerc}\hhut@label@comma\\
+ \noindent\hhutunderline[54pt]{\hhut@value@reviewerd}\hhut@label@comma\hhutunderline[54pt]{\hhut@value@reviewere}}
+ \end{spacing}\begin{center}{\songti\zihao{4}\hhut@value@nlcdate\hspace{24pt}\hhut@value@nlclocate}\end{center}
+ \clearpage\if@twoside\thispagestyle{empty}\cleardoublepage\fi}
+\newcommand\makeverticaltitle{\cleardoublepage\thispagestyle{empty}\pdfbookmark[0]{\hhut@label@spine}{spine}{\vskip5cm\begin{flushleft}\setstretch{1.1}\begin{minipage}{1em}{\songti\zihao{4}\hhut@value@vtitle}\vskip2cm{\songti\zihao{4}\hhut@value@author}\vskip2cm{\songti\zihao{4}\hhut@value@institute}\end{minipage}\end{flushleft}}\clearpage\if@twoside\thispagestyle{empty}\cleardoublepage\fi}
+\newcommand\makeinfo[1]{%
+ \newpage\cleardoublepage\thispagestyle{empty}\pdfbookmark[0]{\hhut@label@cover}{cover}
+ \begin{spacing}{3.0}{\songti\zihao{4}
+ \noindent\hhut@label@cover@classification\hhutunderline[69pt]{\hhut@value@classification}\hspace{6pt}\hhut@label@cover@udc\hhutunderline[69pt]{\hhut@value@udc}\hspace{6pt}\hhut@label@cover@securitylevel\hhutunderline[90pt]{\hhut@value@securitylevel}\\
+ \noindent\hhut@label@cover@author\hhutunderline[84pt]{\hhut@value@author}\hspace{6pt}\hhut@label@cover@studentnumber\hhutunderline[102pt]{\hhut@value@studentnumber}\hspace{6pt}\hhut@label@cover@institute\hhutunderline[96pt]{\hhut@value@institute}\\
+ \noindent\hhut@label@cover@zhtitle\hhutunderline[361pt]{\hhut@value@zhtitle}\\
+ \noindent\hhut@label@cover@zhsubtitle\hhutunderline[345pt]{\hhut@value@zhsubtitle}\\
+ \noindent\hhut@label@cover@entitle\uline{\hhut@value@entitle}\\
+ \noindent\hhut@label@cover@ensubtitle\hhutunderline[345pt]{\hhut@value@ensubtitle}\\
+ \noindent\hhut@label@cover@thesislang\hhutunderline[40pt]{\hhut@value@thesislang}\hhut@label@cover@abstractlang\hhutunderline[60pt]{\hhut@value@abstractlang}\hhut@label@cover@thesispages\hhutunderline[30pt]{\hhut@value@thesispages}\hhut@label@cover@numofwords\hhutunderline[30pt]{\hhut@value@numofwords}\hhut@label@cover@unitofwords\\
+ \noindent\hhut@label@cover@thesiskeywords\hhutunderline[373pt]{\hhut@value@thesiskeywords}\\
+ \noindent\hhut@label@cover@degree\hhutunderline[90pt]{\hhut@value@degree}\hfill\hhut@label@cover@major\hhutunderline[210pt]{\hhut@value@major}\\
+ \noindent\hhut@label@cover@researchfield\hhutunderline[387pt]{\hhut@value@researchfield}\\
+ {\ifhhut@professionalmaster
+ \noindent\hhut@label@cover@professional@tutora\hhutunderline[90pt]{\hhut@value@tutora}\hfill\hhut@label@cover@professional@tutorinstitute\hhutunderline[210pt]{\hhut@value@tutorainstitute}\\
+ \noindent\hhut@label@cover@professional@tutorb\hhutunderline[90pt]{\hhut@value@tutorb}\hfill\hhut@label@cover@professional@tutorinstitute\hhutunderline[210pt]{\hhut@value@tutorbinstitute}\\
+ \else\noindent\hhut@label@cover@tutor\hhutunderline[90pt]{\hhut@value@tutor}\hfill\hhut@label@cover@tutorinstitute\hhutunderline[210pt]{\hhut@value@tutorinstitute}\\\fi}
+ \noindent\hhut@label@cover@defenddate\hhutunderline[357pt]{\hhut@value@defenddate}}
+ \end{spacing}\clearpage\if@twoside\thispagestyle{empty}\cleardoublepage\fi}
+\newcommand\englishtitle[1]{\def\hhut@value@englishtitle{#1}}
+\newcommand\englishauthor[1]{\def\hhut@value@englishauthor{#1}}
+\newcommand\entutor[1]{\def\hhut@value@entutor{#1}}
+\newcommand\eninstitute[1]{\def\hhut@value@eninstitute{#1}}
+\newcommand\englishdepartment[1]{\def\hhut@value@englishdepartment{#1}}
+\newcommand\englishdate[1]{\def\hhut@value@englishdate{#1}}
+\newcommand\enlocate[1]{\def\hhut@value@enlocate{#1}}
+\newcommand\englishdegree[1]{\def\hhut@value@englishdegree{#1}}
+\newcommand\makeeninfo[1]{\cleardoublepage\thispagestyle{empty}\pdfbookmark[0]{\hhut@label@encover}{encover}\begin{center}\vskip20pt\begin{spacing}{2.0}{\zihao{2}\textbf{\hhut@value@englishtitle}}\vskip60pt{\rmfamily\zihao{4}\hhut@label@enstatement}\vskip60pt{\normalfont\rmfamily\zihao{4}\hhut@label@enby}\\{\rmfamily\zihao{4}\textbf{\hhut@value@englishauthor}}\\{\rmfamily\zihao{4}\textbf{(\hhut@value@englishdepartment)}}\vskip60pt{\normalfont\rmfamily\zihao{4}\hhut@label@entutor\rmfamily\zihao{4}\textbf{\hhut@value@entutor}}\vskip60pt{\rmfamily\zihao{4}\textbf{\hhut@value@enlocate}}\\{\noindent\rmfamily\zihao{4}\textbf{\hhut@value@englishdate}}\end{spacing}\end{center}\normalfont\clearpage\if@twoside\thispagestyle{empty}\cleardoublepage\fi}
+\newcommand\makedeclare{\cleardoublepage\pdfbookmark[0]{\hhut@label@declareoriginal}{declareoriginal}\thispagestyle{empty}\vskip40pt\begin{spacing}{2.0}{\zihao{4}\rmfamily\bfseries\hhut@label@original\par\vskip10pt\hhut@label@originalcontent\par\vskip50pt\hhut@label@authorsign\hhutunderline[120pt]{}\hfill\hhut@label@originaldate\par\vskip60pt\hhut@label@authorization\par\vskip10pt\hhut@label@authorizationcontent\par\vskip50pt\hhut@label@authorsign\hhutunderline[120pt]{}\hfill\hhut@label@originaldate}\end{spacing}\clearpage\if@twoside\thispagestyle{empty}\cleardoublepage\fi}
+\newenvironment{preface}{\cleardoublepage\chapter{\hhut@label@preface}}{}
+\newenvironment{abstract}{\cleardoublepage\chapter{\hhut@label@abstract}}{}
+\newcommand\keywords[1]{\vspace{2ex}\noindent{\textbf{\hhut@label@keywords}} #1}
+\newenvironment{enabstract}{\clearpage\chapter{\hhut@label@enabstract}}{}
+\newcommand\enkeywords[1]{\vspace{2ex}\noindent{\textbf{\hhut@label@enkeywords}} #1}
+\renewcommand\tableofcontents{\if@twocolumn\@restonecoltrue\onecolumn\else\@restonecolfalse\fi\chapter*{\contentsname}\@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}\pdfbookmark[0]{目录}{bittoc}\@starttoc{toc}\if@restonecol\twocolumn\fi}
+\renewenvironment{thebibliography}[1]{\footnotesize\chapter*{\bibname}\@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}\addcontentsline{toc}{chapter}{参考文献}\list{\@biblabel{\@arabic\c@enumiv}}{\settowidth\labelwidth{\@biblabel{#1}}\leftmargin\labelwidth\advance\leftmargin\labelsep\setlength{\parsep}{-0.5mm}\setlength{\labelsep}{0.5em}\setlength{\itemsep}{0.05pc}\setlength{\listparindent}{0in}\setlength{\itemindent}{0in}\setlength{\rightmargin}{0in}\@openbib@code\usecounter{enumiv}\let\p@enumiv\@empty\renewcommand\theenumiv{\@arabic\c@enumiv}}\sloppy\clubpenalty4000\@clubpenalty\clubpenalty\widowpenalty4000\sfcode`\.\@m}{\def\@noitemerr{\@latex@warning{Empty `thebibliography' environment}}\endlist}
+\newenvironment{acknowledgement}{\chapter{\hhut@label@acknowledgement}\songti}{}
+\newenvironment{resume}{\cleardoublepage\chapter{\hhut@label@resume}\songti}{}
+\newcommand{\cndash}{\rule{0.0em}{0pt}\rule[0.35em]{1.4em}{0.05em}\rule{0.2em}{0pt}}
+\newcommand{\hhutspace}[1][1]{\hspace{#1\ccwd}}
+\endinput

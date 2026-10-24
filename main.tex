@@ -1,0 +1,51 @@
+% !TeX program = xelatex
+% 主入口。UTF-8 编码。构建：latexmk -xelatex main.tex
+% 基于 caowenhan/hhuthesis v2.0.0 的明确标识适配类。
+% 暂按“电子信息”预设 professionalmaster；本人核实后可改 academicmaster
+% 或 nonfulltimemaster。不要把本稿的暂设视为已确认学位/培养方式。
+\IfFileExists{hhuthesis.cls}{%
+  \documentclass[professionalmaster]{hhuthesis}% 与完整原仓库合并时自动使用原类
+}{%
+  \documentclass[professionalmaster]{hhuthesis-cad}% 本交付包的独立编译入口
+}
+\input{config/settings}
+\input{config/metadata}
+\begin{document}
+\hypersetup{pageanchor=false}
+\iffullfrontmatter
+  % 正式封面接口保留；下列完整模式须在信息/格式核定后重新检查。
+  \makenlctitle{}
+  % \makeverticaltitle
+  \makeinfo{}
+  \makeeninfo{}
+  \makedeclare
+\else
+  \input{chapters/draft-cover}
+\fi
+\frontmatter
+\hypersetup{pageanchor=true}
+\input{chapters/abstract}
+\tableofcontents
+% 正文有实际图表后再启用，避免在提纲阶段产生空清单。
+% \listoffigures
+% \listoftables
+\mainmatter
+\input{chapters/chapter1}
+\input{chapters/chapter2}
+\input{chapters/chapter3}
+\input{chapters/chapter4}
+\input{chapters/chapter5}
+\input{chapters/chapter6}
+\input{chapters/chapter7}
+\input{chapters/references-placeholder}
+% 正式文献整理完成后，删除上一行并采用学院确认的参考文献样式。
+% 若沿用原项目：从原仓库取得 hhuthesis-numeric.bst 放到本目录，再启用：
+% \bibliographystyle{hhuthesis-numeric}
+% \bibliography{reference/references}
+\appendix
+\ctexset{chapter={name={附录,},number={\Alph{chapter}}}}
+\input{chapters/appendices}
+\backmatter
+\input{chapters/acknowledgement}
+\input{chapters/achievements}
+\end{document}

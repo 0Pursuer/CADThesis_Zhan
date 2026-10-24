@@ -1,0 +1,276 @@
+{
+  "document": "main.pdf",
+  "physical_pages": 28,
+  "preview_pages": 8,
+  "headings_main_text": {
+    "chapter": 7,
+    "section": 39,
+    "subsection": 94
+  },
+  "unique_labels": 140,
+  "duplicate_labels": 0,
+  "toc_subsections": 94,
+  "bookmarks": 149,
+  "overfull_messages": 0,
+  "missing_glyph_messages": 0,
+  "undefined_reference_messages": 0,
+  "clipped_text_boxes": [],
+  "compile_status": "latexmk: all targets up-to-date",
+  "known_warnings": "Small unused math-symbol font-size substitutions; no missing text glyphs or overfull boxes.",
+  "tested_mode": "bundled hhuthesis-cad adaptation; draft cover; guidance shown",
+  "untested_mode": "upstream hhuthesis.cls and full official front-matter mode",
+  "page_details": [
+    {
+      "physical_page": 1,
+      "characters": 212,
+      "first_lines": [
+        "河海大学",
+        "硕士学位论文写作框架",
+        "异构CAD 形变特征转换技术研究"
+      ]
+    },
+    {
+      "physical_page": 2,
+      "characters": 838,
+      "first_lines": [
+        "河海大学硕士学位论文",
+        "摘要",
+        "异构CAD 系统之间的零件模型交换不仅需要保持几何形状，还需要保留特征参"
+      ]
+    },
+    {
+      "physical_page": 3,
+      "characters": 2536,
+      "first_lines": [
+        "ABSTRACT",
+        "ABSTRACT",
+        "Part-model exchange across heterogeneous CAD systems requires both geometric con-"
+      ]
+    },
+    {
+      "physical_page": 4,
+      "characters": 3228,
+      "first_lines": [
+        "河海大学硕士学位论文",
+        "目录",
+        "摘要.................................................................................................................................."
+      ]
+    },
+    {
+      "physical_page": 5,
+      "characters": 3359,
+      "first_lines": [
+        "目录",
+        "2.4.2 引用身份、建模历史与拓扑划分差异........................................................",
+        "4"
+      ]
+    },
+    {
+      "physical_page": 6,
+      "characters": 3351,
+      "first_lines": [
+        "河海大学硕士学位论文",
+        "4.2 基准面的关联重建方法.......................................................................................",
+        "7"
+      ]
+    },
+    {
+      "physical_page": 7,
+      "characters": 3469,
+      "first_lines": [
+        "目录",
+        "5.3.3 运行配置、批处理与模型保存.................................................................... 10",
+        "5.4 结果记录、比较与可视化................................................................................... 10"
+      ]
+    },
+    {
+      "physical_page": 8,
+      "characters": 1031,
+      "first_lines": [
+        "河海大学硕士学位论文",
+        "7.1.3 实验结论与适用范围总结............................................................................ 14",
+        "7.2 研究不足与后续展望........................................................................................... 14"
+      ]
+    },
+    {
+      "physical_page": 9,
+      "characters": 777,
+      "first_lines": [
+        "河海大学硕士学位论文",
+        "第一章绪论",
+        "本章写作重点：说明研究动机、已有方法、研究范围和论文主线。研究现状需用正式阅读的文献"
+      ]
+    },
+    {
+      "physical_page": 10,
+      "characters": 341,
+      "first_lines": [
+        "第一章",
+        "绪论",
+        "1.3.2 研究目标与关键问题"
+      ]
+    },
+    {
+      "physical_page": 11,
+      "characters": 770,
+      "first_lines": [
+        "河海大学硕士学位论文",
+        "第二章异构CAD 特征差异分析与转换需求",
+        "本章写作重点：按参数、空间、组织和依赖等维度归纳问题，并逐类落实到五类特征。此章分析"
+      ]
+    },
+    {
+      "physical_page": 12,
+      "characters": 483,
+      "first_lines": [
+        "第二章",
+        "异构CAD 特征差异分析与转换需求",
+        "2.4 跨特征的共性差异"
+      ]
+    },
+    {
+      "physical_page": 13,
+      "characters": 739,
+      "first_lines": [
+        "河海大学硕士学位论文",
+        "第三章面向五类特征的统一模型设计",
+        "本章写作重点：围绕参数及其作用设计中间结构，保持与现有CADExchange 定义一致。可选扩展"
+      ]
+    },
+    {
+      "physical_page": 14,
+      "characters": 665,
+      "first_lines": [
+        "第三章",
+        "面向五类特征的统一模型设计",
+        "3.4 拉伸与旋转的统一结构"
+      ]
+    },
+    {
+      "physical_page": 15,
+      "characters": 683,
+      "first_lines": [
+        "河海大学硕士学位论文",
+        "第四章五类特征转换方法与关键算法",
+        "本章写作重点：以“问题、输入、步骤、输出、适用条件”组织方法，减少接口名称。关键公式"
+      ]
+    },
+    {
+      "physical_page": 16,
+      "characters": 778,
+      "first_lines": [
+        "第四章",
+        "五类特征转换方法与关键算法",
+        "4.4 拉伸方向与终止范围的转换方法"
+      ]
+    },
+    {
+      "physical_page": 17,
+      "characters": 218,
+      "first_lines": [
+        "河海大学硕士学位论文",
+        "4.7.3 独立、内嵌与参数圆截面的重建",
+        "写作提示：分别说明直接引用、补建草图、截面回放以及圆管或双圆截面构造，并检查内半径是"
+      ]
+    },
+    {
+      "physical_page": 18,
+      "characters": 813,
+      "first_lines": [
+        "第五章",
+        "模型转换系统设计与实现",
+        "第五章模型转换系统设计与实现"
+      ]
+    },
+    {
+      "physical_page": 19,
+      "characters": 371,
+      "first_lines": [
+        "河海大学硕士学位论文",
+        "5.4.2 结构、参数与几何比较的接入",
+        "写作提示：区分现有几何比较能力与待接回的目标重读、当前字段比较；介绍差异展示，不声称"
+      ]
+    },
+    {
+      "physical_page": 20,
+      "characters": 807,
+      "first_lines": [
+        "第六章",
+        "转换实验设计与结果分析",
+        "第六章转换实验设计与结果分析"
+      ]
+    },
+    {
+      "physical_page": 21,
+      "characters": 536,
+      "first_lines": [
+        "河海大学硕士学位论文",
+        "6.3.3 扫掠转换实验",
+        "写作提示：围绕三类截面、非圆轮廓、路径反向和圆管内孔设计样例，区分公共表达范围与各路"
+      ]
+    },
+    {
+      "physical_page": 22,
+      "characters": 453,
+      "first_lines": [
+        "第七章",
+        "总结与展望",
+        "第七章总结与展望"
+      ]
+    },
+    {
+      "physical_page": 23,
+      "characters": 125,
+      "first_lines": [
+        "河海大学硕士学位论文",
+        "参考文献",
+        "写作提示：正式文献尚未补齐。围绕几何交换、特征回放、统一模型与转换验证整理实际阅读的"
+      ]
+    },
+    {
+      "physical_page": 24,
+      "characters": 94,
+      "first_lines": [
+        "附录A",
+        "五类特征参数与读写覆盖表",
+        "附录A 五类特征参数与读写覆盖表"
+      ]
+    },
+    {
+      "physical_page": 25,
+      "characters": 106,
+      "first_lines": [
+        "河海大学硕士学位论文",
+        "附录B 测试样例、转换路线与结果记录表",
+        "写作提示：记录样例编号、子类型、源目标系统、预期结果、原生文件、特征对应、几何差异、编"
+      ]
+    },
+    {
+      "physical_page": 26,
+      "characters": 104,
+      "first_lines": [
+        "附录C",
+        "主要中间模型结构与关键处理流程",
+        "附录C 主要中间模型结构与关键处理流程"
+      ]
+    },
+    {
+      "physical_page": 27,
+      "characters": 68,
+      "first_lines": [
+        "河海大学硕士学位论文",
+        "致谢",
+        "写作提示：按实际指导、协作和支持情况撰写。涉及共同完成的功能或数据时，在正文和致谢中"
+      ]
+    },
+    {
+      "physical_page": 28,
+      "characters": 97,
+      "first_lines": [
+        "攻读硕士学位期间取得的成果",
+        "攻读硕士学位期间取得的成果",
+        "写作提示：仅据实填写本人论文、专利、软件著作权、项目及其他成果；核对作者排序、状态和"
+      ]
+    }
+  ]
+}

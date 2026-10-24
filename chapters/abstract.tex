@@ -1,0 +1,28 @@
+% 摘要初稿：无未经验证的实验数据。正文完成后补充经验证的结果并同步中英文。
+\begin{abstract}
+异构CAD系统之间的零件模型交换不仅需要保持几何形状，还需要保留特征参数和构造依赖，以支持模型在目标系统中的继续修改。针对SolidWorks、Creo和NX在参数含义、空间方向、对象组织及引用方式等方面的差异，本文围绕基于草图的形变特征开展转换研究，以拉伸、旋转和扫掠为核心，以草图与基准面为支撑，研究统一表达、参数映射和目标模型重建方法。主要研究内容如下。
+
+首先，从几何构造与系统参数调查出发，归纳数值量纲、方向约定、终止条件、薄壁材料位置、草图约束和几何引用等差异，明确结构、参数、几何及编辑能力的保留要求。针对同名参数含义不同和相同外形对应不同构造关系的问题，以参数的实际作用作为统一表达的依据。
+
+其次，设计由基础几何、单位、对象引用、草图与基准面、成形特征组成的统一模型。分别组织草图图元与约束作用位置、基准面构造条件、拉伸与旋转的两端范围及薄壁偏置，并用独立草图、内嵌草图和参数圆形截面表达扫掠的不同截面来源。通过标识和引用描述特征依赖，以必要几何信息辅助目标对象定位。
+
+然后，研究面向目标原生特征的转换方法。通过源与目标实际草图坐标的转换恢复轮廓和约束方向，结合构造参考重建基准面；通过方向、终止范围和两侧材料位置的映射处理拉伸与旋转；通过截面来源、路径起点、曲线顺序和截面放置的联合处理实现基本扫掠重建，并明确辅助构造与受限参数的适用条件。
+
+最后，基于CADExchange与CADProj实现公共模型层及三系统读写适配，形成模型读取、参数转换、顺序重建和结果记录流程。设计三条同系统基线和六条跨系统路线，从特征结构、参数与约束、几何一致性、目标原生编辑和执行效率等方面组织评价。现有工作形成了五类特征的统一表达与转换原型，复杂约束、特殊终止及高级扫掠选项仍需完善，相关保留程度应由明确范围内的实验分别验证。
+
+\keywords{异构CAD；形变特征；统一特征模型；参数映射；引用恢复；可编辑模型}
+\end{abstract}
+
+\begin{enabstract}
+Part-model exchange across heterogeneous CAD systems requires both geometric consistency and the preservation of parameters and dependencies for further editing. This thesis studies sketch-based parametric form feature translation across SolidWorks, Creo, and NX. Extrusion, revolution, and sweep are the principal features, supported by sketches and datum planes.
+
+First, differences in units, directions, termination conditions, thin-wall material placement, sketch constraints, and references are analyzed through geometric construction and parameter investigation. Requirements for structure, parameters, geometry, and editability are distinguished. Parameters are interpreted by their actual construction effects rather than their names.
+
+Second, a unified model organizes basic geometry, units, references, sketches, datum planes, and form features. It represents sketch entities and constraint attachment points, datum-plane construction conditions, two-sided extents, and thin-wall offsets. Sweep profiles are classified as independent sketches, embedded sketches, or parametric circular sections. Identifiers and references describe dependencies, while geometric information assists target-object location.
+
+Third, reconstruction methods recover native features. Transformations between actual sketch frames restore profile geometry and constraint directions, while construction references guide datum-plane reconstruction. Direction, termination-range, and material-placement mappings support extrusion and revolution. Basic sweep reconstruction jointly handles profile sources, path starting points, segment order, and section placement, with explicit conditions for auxiliary constructions and restricted parameters.
+
+Finally, CADExchange and CADProj implement the common model and system adapters for extraction, parameter conversion, sequential reconstruction, and result recording. An evaluation scheme uses three same-system baselines and six directed cross-system routes, separately examining feature structure, parameters and constraints, geometry, native editing, and efficiency. The work provides a unified representation and a conversion prototype for the five feature categories. Complex constraints, special termination cases, and advanced sweep options remain limited; preservation levels require experimental verification within explicit scopes.
+
+\enkeywords{heterogeneous CAD; parametric form features; unified feature model; parameter mapping; reference recovery; editable models}
+\end{enabstract}
